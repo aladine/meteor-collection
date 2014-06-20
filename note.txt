@@ -1,0 +1,46 @@
+({
+    "nid": "7",
+    "product": "Admin",
+    "expected_results": "",
+    "account": "padma@shkindy.com",
+    "url": "https://staging.littlelives.com/admin/organisations/add_user?h=22571f611a14d2fa3f0acd0f62dc0d39",
+    "exist": "",
+    "click_ele": "/html/body/div/div[3]/div/div[2]/a",
+    "fields": "//*[@id=\"User1Username\"]\n//*[@id=\"User1Name\"]\n//*[@id=\"User1GenderFemale\"]\n//*[@id=\"User1Class\"]\n/html/body/div[3]/div[2]/button\n/html/body/div[3]/table/tbody/tr[3]/td[5]/a\n/html/body/div[3]/div[2]/button[2]",
+    "submit_btn": "//*[@id=\"btnProceed\"]",
+    "result_page": "https://staging.littlelives.com/admin/organisations?h=4621ac601bb43ce27b2be28936d68d3f",
+    "tid": "AD7",
+    "script":""
+ })
+
+
+
+precompile: Add 
+
+partial testcase:
+Mini action: 
+Mini pre-action: login 
+Mini acknowledgement: send receipt
+Mini trigger
+
+Portfolio: 
+
+
+
+Testcases: get all the elements for check Title Testcases
+-->checkTitle
+
+Divide and run it again with custom action: 
+element and inut field with valid points
+
+
+List of all mini Testcases
+List of all test suite: Admin, Portfolio, Attendance...
+List of all the results. 
+Create a new one in poerfolio/attedance: Testcase with withdrawl
+
+TASKS: divide fields to an Array
+
+Use mongo id wiht MVC
+Isert an new test.assertSelectorHasText('.selector', 'text', 'message')
+

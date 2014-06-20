@@ -1,0 +1,142 @@
+<head>
+  <title>BAU Testsuite</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h2>LittleLives BAU Testsuite</h2>
+			<p>Link for CasperJS plugin for Chrome: <a href="https://chrome.google.com/webstore/detail/resurrectio/kicncbplfjgjlliddogifpohdhkbjogm">here</a> </p>
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-3 sidebar">
+				{{> testcases}}
+			</div>
+			<div class="col-xs-9">
+				{{> add_testcase}}
+			</div>
+			
+			
+		</div>
+	  	
+  	</div>
+</body>
+
+
+<template name="add_testcase">
+	<h1>Edit Testcase</h1>
+	<div class="col-xs-12">
+		{{> edit_form}}
+	</div>
+  
+</template>	
+
+<template name="testcases">
+	<!-- <div>
+		<label for="search-test">Search: </label>
+		<input type="search" id="search-test" placeholder="name">
+	</div> -->
+	<div><button class="btn btn-primary add_testcase"><i class=".glyphicon glyphicon-plus"></i>Add a Testcase<i class="plus"></i></button></div>
+	<div>
+		<h2>Testcases ({{count}})</h2>
+		<ul>
+		{{#each listCases}}
+			{{> case}}
+		{{/each}}
+		</ul>
+	</div>
+</template>
+
+<template name="case">
+	{{#if product}}
+		<li class="case {{#if deprecated}}deprecated{{/if}}">
+			<span>{{nid}}.</span>
+			<span> {{product}}</span>
+			
+			<span>{{tid}}</span>
+			<div class="pull-right">
+				<a href="#" class="edit_case">Edit</a>
+				<a href="#" class="delete_case">Del</a>
+			</div>
+			
+		</li>
+	{{/if}}
+</template>
+
+<template name="edit_case">
+	<div class="col-xs-12">
+		{{> edit_form}}
+	</div>
+</template>
+
+<template name="edit_form">
+	<form class="form form-vertical" role="form" >
+		<div class="form-group">
+		    <label for="" class="control-label">nid</label>
+		    <input type="number" name="nid" class="form-control" value="{{case.nid}}">
+		    <input type="hidden" name="_id"  value="{{case._id}}">
+		</div>
+		<div class="form-group">
+	    	<label for="">Product</label>
+		    <input type="text" name="product" class="form-control" value="{{case.product}}" placeholder="Admin, LittleSchools, Questions...">
+		 </div>
+		<div class="form-group">   
+		    <label for="">Description</label>
+		    <input type="text" name="description" class="form-control" value="{{case.description}}">
+	    	<!-- <select name="product"  class="form-control" value="{{case.product}}">
+	    		<option value="attendance">Attendance</option>
+	    		<option value="admin">Admin</option>
+	    		<option value="portfolio">Portfolio</option>
+	    		<option value="notification">Notification</option>
+	    		<option value="school">School</option>
+	    	</select> -->
+	    </div>
+		<div class="form-group">
+	    	<label for="">Expected results</label>
+	    	<input type="text" name="expected_results" class="form-control"  value="{{case.expected_results}}">
+	    </div>
+		<div class="form-group">
+	    	<label for="">Account</label>
+	    	<input type="text" name="account" class="form-control" value="{{case.account}}">
+	    </div>
+		<div class="form-group">
+	    	<label for="">Url</label>
+	    	<input type="text" name="url" class="form-control" value="{{case.url}}">
+	    </div>
+		<div class="form-group">
+	    	<label for="">exist</label>
+	    	<input type="text" name="exist" class="form-control" value="">
+
+	    </div>
+		<div class="form-group">
+	    	<label for="">Click_ele</label>
+	    	<input type="text" name="click_ele" class="form-control" value="{{case.click_ele}}">
+	    </div>
+		<div class="form-group">
+	    	<label for="">Fields</label>
+	    	<input type="text" name="fields" class="form-control" value="{{case.fields}}">
+	    </div>
+		<div class="form-group">
+	    	<label for="">Submit_btn</label>
+	    	<input type="text" name="submit_btn" class="form-control" value="{{case.submit_btn}}">
+	    </div>
+		<div class="form-group">
+	    	<label for="">Result_page</label>
+	    	<input type="text" name="result_page" class="form-control" value="{{case.result_page}}">
+	    </div>
+		<div class="form-group">
+	    	<label for="">tid</label>
+	    	<input type="text" name="tid" class="form-control" value="{{case.tid}}">
+	    </div>
+	    <div class="form-group">
+	    	<label for="">deprecated</label>
+	    	<input type="text" name="deprecated" class="form-control" value="{{case.deprecated}}">
+	    </div>
+	    <div class="form-group">
+	    	<label for="">Script</label>
+	    	<textarea type="text" name="script" class="form-control" value="{{case.script}}" cols=15 rows=10>{{case.script}}</textarea>
+	    </div>
+	    <input type="button" class="btn btn-lg btn-primary" data-loading-text="Saving..." value="Save"/>
+	</form>
+</template>	

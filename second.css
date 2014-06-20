@@ -1,0 +1,22 @@
+/* CSS declarations go here */
+.deprecated{
+	text-decoration:line-through;
+	/*background-color: #CCCCCC;*/
+}
+
+.jumbotron{
+	margin-top: 30px;
+	background-color: #d7d600;
+}
+
+.sidebar{
+	background-color: #EEEEDF;
+	border-radius:6px;
+}
+
+.case:hover .pull-right{
+	display:block;
+}
+.case .pull-right{
+	display:none;
+}
